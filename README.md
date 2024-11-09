@@ -28,6 +28,13 @@ For each minute the application uses `redis` as a distributed in-memory cache st
 The application is designed to process at least `10,000 requests per second` and supports various features, including HTTP request deduplication and logging.
 
 
+### Command for Redis server setup
+
+```bash
+docker pull redis
+run -d --name redis_server -p 6379:6379 redis:latest
+```
+
 ### Commands for running benchmark
 
 ```bash
