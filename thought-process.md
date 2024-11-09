@@ -82,7 +82,6 @@ The results indicate that the application will likely scale better as you increa
 
 * In Cassandra, the combination of primary keys is always unique; if we try to insert a record with the same primary keys, it'll replace the existing record. So by setting the minute value as the parititon key and the actual ID as the clustering key, we could just perform an insert and fetch the record count of each minute. Since Cassandra is a write-heavy database, it could withstand more workload, especially if done using Spark or other processing engines it can easily process upto 20k ops/sec also we could use the data for history/audit/analytic purpose.
 
-
 * It is not completed; I just tried it.
 
 

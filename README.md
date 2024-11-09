@@ -26,3 +26,10 @@ The application accepts a HTTP Get request with Id as mandatory param and endpoi
 For each minute the application uses `redis` as a distributed in-memory cache store. The incoming id's are pushed into a `set` and by using a scheduler that triggers a function each minute and the unique number of id's are logged in a file and also published to kafka.
 
 The application is designed to process at least `10,000 requests per second` and supports various features, including HTTP request deduplication and logging.
+
+
+### Commands for running benchmark
+
+```bash
+jmeter -n -t "HighThroughputJavaApp\benchmark-jmeter\Verve Assignment.jmx" -l HighThroughputJavaApp\benchmark-jmeter\reactive_redis_results.csv -e -o HighThroughputJavaApp\benchmark-jmeter\Jmeter_Graph_Reactive_Redis_report
+```
