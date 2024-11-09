@@ -1,0 +1,34 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 200000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 12.141099999999579,
+    "medianResTime" : 7.0,
+    "minResTime" : 1.0,
+    "maxResTime" : 1569.0,
+    "pct1ResTime" : 8.0,
+    "pct2ResTime" : 9.0,
+    "pct3ResTime" : 12.0,
+    "throughput" : 8056.394763343404,
+    "receivedKBytesPerSec" : 1280.132804632427,
+    "sentKBytesPerSec" : 1549.0429490810675
+  },
+  "Dedupe Id" : {
+    "transaction" : "Dedupe Id",
+    "sampleCount" : 200000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 12.141099999999579,
+    "medianResTime" : 7.0,
+    "minResTime" : 1.0,
+    "maxResTime" : 1569.0,
+    "pct1ResTime" : 8.0,
+    "pct2ResTime" : 9.0,
+    "pct3ResTime" : 12.0,
+    "throughput" : 8056.394763343404,
+    "receivedKBytesPerSec" : 1280.132804632427,
+    "sentKBytesPerSec" : 1549.0429490810675
+  }
+}
