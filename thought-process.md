@@ -29,7 +29,7 @@ I wanted to let you know that the assignment was completed through an iterative 
 * In the initial testing with `200k requests`, the application was able to process almost on an average of **8~9k requests per second** and with a latency of **18ms**. But the drawback is that since the hashmap is in local memory, when the application is deployed at the multi-instance level, it'll fail to identify duplicate IDs also got timeout issue for 1% of requests. So I moved on to the next approach.
 
 &nbsp;
-![Using ConcurrentHashMap](https://raw.githubusercontent.com/FalconDinesh/HighThroughputJavaApp/refs/heads/main/benchmark-jmeter/HashMap%20-%20report.png)
+![Using ConcurrentHashMap](https://github.com/FalconDinesh/HighThroughputJavaApp-Deduplication/blob/main/benchmark-jmeter/HashMap%20-%20report.png?raw=true)
 
 
 ### Using Redis
@@ -44,7 +44,7 @@ I wanted to let you know that the assignment was completed through an iterative 
 * I tested using the same Jmeter with the same 200k requests, and the application was able to process **8~9 requests per second** and also with very low **avg latency of 12ms**. I'm using a very traditional way of programming and synchronous usage of Redis and Rest APIs. So I decided to try something that runs `non-blocking and asynchronously`.
 
 &nbsp;
-![Using Redis](https://raw.githubusercontent.com/FalconDinesh/HighThroughputJavaApp/refs/heads/main/benchmark-jmeter/redis%20-%20benchmark.png)
+![Using Redis](https://github.com/FalconDinesh/HighThroughputJavaApp-Deduplication/blob/main/benchmark-jmeter/redis%20-%20benchmark.png?raw=true)
 
 
 
@@ -66,7 +66,7 @@ I wanted to let you know that the assignment was completed through an iterative 
 * By these changes, I was able to effectively reduce the latency and throughput of the application. When tested with the same volume of 200k requests from `1000 clients each sending 200 req/sec`, the application was able to process **12~13k requests per second** with low latency (10 ms).
 
 
-![Reactive Programming with Redis](https://raw.githubusercontent.com/FalconDinesh/HighThroughputJavaApp/refs/heads/main/benchmark-jmeter/Reactive_redis-benchmark.png)
+![Reactive Programming with Redis](https://github.com/FalconDinesh/HighThroughputJavaApp-Deduplication/blob/main/benchmark-jmeter/Reactive_redis-benchmark.png?raw=true)
 
 
 * I further dug down and found that my JVM with web Flux has reached the max concurrent thread pool limit, so I `reduced the client size to 50 and each of them sending 4000 requests.` The latency drop was huge and came down to **3.89ms** ms, achieving up to more than **12k requests/sec**. I tested with my personal laptop with 16 GB of memory and 4 cores of processor, so when deployed in multiple servers with load balancers it should handle more, I guess.
